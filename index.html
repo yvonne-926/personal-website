@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yvonne | Personal Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">Yvonne</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="now.html">Now</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="scroll-charm" id="scroll-charm" aria-hidden="true">
+      <span class="garden-line"></span>
+      <span class="hanging-star star-one"></span>
+      <span class="hanging-star star-two"></span>
+      <span class="hanging-star star-three"></span>
+      <span class="hanging-star star-four"></span>
+      <span class="hanging-star star-five"></span>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-name">Hi, I'm Yvonne!</h1>
+          <p class="hero-tagline">Welcome to my personal website :D</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-frame">
+            <!-- Replace with: <img src="your-photo.jpg" alt="Yvonne" /> -->
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <a href="#about"><i class="fas fa-chevron-down"></i></a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-avatar">
+            <div class="avatar-placeholder">
+              <!-- Replace with: <img src="your-photo.jpg" alt="Yvonne" /> -->
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+              Hello! I'm Yvonne. I'm a grade 9 student at St. Robert CHS. This is my personal
+              website where I showcase my projects and interests.
+            </p>
+            <p>
+              When I'm not coding, you can find me reading or exploring new technologies!
+            </p>
+            <div class="about-links">
+              <a href="#" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Some things I've built</p>
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Project One</h3>
+            <p class="project-description">
+              A brief description of this project. What problem does it solve?
+              What did you build and why?
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Project Two</h3>
+            <p class="project-description">
+              A brief description of this project. Highlight the key features
+              and the technologies you used to build it.
+            </p>
+            <ul class="project-tags">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>API</li>
+            </ul>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Project Three</h3>
+            <p class="project-description">
+              A brief description of this project. What was your role and what
+              impact did it have?
+            </p>
+            <ul class="project-tags">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Data</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+          Have a question or want to work together? Send me a message!
+        </p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Designed &amp; built by Yvonne &mdash;
+        <span id="year"></span>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

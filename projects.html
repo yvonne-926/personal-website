@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Yvonne</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="projects.html" class="nav-active">Projects</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="now.html">Now</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header-inner">
+        <p class="page-header-label">my work</p>
+        <h1 class="page-header-title">Projects</h1>
+        <p class="page-header-sub">Things I've done or worked on!</p>
+      </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <main class="page-main">
+      <div class="section-container">
+
+        <!-- Filter tabs (visual only — easy to wire up later) -->
+        <div class="filter-tabs">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Web</button>
+          <button class="filter-btn">Design</button>
+          <button class="filter-btn">Other</button>
+        </div>
+
+        <div class="projects-grid projects-grid--large">
+
+          <!-- Project Card 1 -->
+          <article class="project-card project-card--featured" role="button" tabindex="0"
+            data-title="Project One"
+            data-badge="Featured"
+            data-desc="A brief description of this project. What problem does it solve? What did you build and why? Add as much detail as you like here — the more you write, the more visitors will understand your work!"
+            data-tags="HTML,CSS,JavaScript"
+            data-github="#"
+            data-demo="#"
+          >
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <span class="project-badge">Featured</span>
+            <h3 class="project-title">Project One</h3>
+            <p class="project-description">
+              A brief description of this project. What problem does it solve?
+              What did you build and why? Add as much detail as you like here!
+            </p>
+            <ul class="project-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card" role="button" tabindex="0"
+            data-title="Project Two"
+            data-desc="A brief description of this project. Highlight the key features and the technologies you used to build it. What did you learn? What would you do differently?"
+            data-tags="React,Node.js,API"
+            data-github="#"
+            data-demo="#"
+          >
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Project Two</h3>
+            <p class="project-description">
+              A brief description of this project. Highlight the key features
+              and the technologies you used to build it.
+            </p>
+            <ul class="project-tags">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>API</li>
+            </ul>
+            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card" role="button" tabindex="0"
+            data-title="Project Three"
+            data-desc="A brief description of this project. What was your role and what impact did it have? Share what you're most proud of!"
+            data-tags="Python,SQL,Data"
+            data-github="#"
+            data-demo="#"
+          >
+            <div class="project-card-header">
+              <i class="fas fa-folder-open project-icon"></i>
+              <div class="project-links">
+                <a href="#" aria-label="GitHub Repository" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Project Three</h3>
+            <p class="project-description">
+              A brief description of this project. What was your role and what
+              impact did it have?
+            </p>
+            <ul class="project-tags">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Data</li>
+            </ul>
+            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Add more project cards here -->
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal">
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-image-wrap">
+          <div class="modal-image-placeholder"><i class="fas fa-folder-open"></i></div>
+        </div>
+        <div class="modal-body">
+          <span class="project-badge modal-badge" id="modal-badge" hidden></span>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <ul class="project-tags modal-tags" id="modal-tags"></ul>
+          <p class="modal-desc" id="modal-desc"></p>
+          <div class="modal-actions">
+            <a href="#" class="btn btn-primary" id="modal-demo" target="_blank" rel="noopener">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="#" class="btn btn-secondary" id="modal-github" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Designed &amp; built by Yvonne &mdash; <span id="year"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Filter tabs
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+
+      // Project detail modal
+      const modal = document.getElementById("project-modal");
+      const modalClose = document.getElementById("modal-close");
+
+      function openModal(card) {
+        document.getElementById("modal-title").textContent = card.dataset.title || "";
+        document.getElementById("modal-desc").textContent  = card.dataset.desc  || "";
+
+        const badge = document.getElementById("modal-badge");
+        if (card.dataset.badge) {
+          badge.textContent = card.dataset.badge;
+          badge.hidden = false;
+        } else {
+          badge.hidden = true;
+        }
+
+        const tagsEl = document.getElementById("modal-tags");
+        tagsEl.innerHTML = (card.dataset.tags || "").split(",").map(t =>
+          `<li>${t.trim()}</li>`).join("");
+
+        document.getElementById("modal-github").href = card.dataset.github || "#";
+        document.getElementById("modal-demo").href   = card.dataset.demo   || "#";
+
+        modal.hidden = false;
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      }
+
+      function closeModal() {
+        modal.hidden = true;
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".project-card[role='button']").forEach((card) => {
+        card.addEventListener("click", () => openModal(card));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(card); }
+        });
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+    </script>
+  </body>
+</html>
