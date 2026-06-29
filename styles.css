@@ -1760,3 +1760,241 @@ footer {
     justify-content: center;
   }
 }
+
+/* ===========================
+    HUD Corner Decoration (Bottom-Left)
+    Futuristic Tech Design - Bold Version
+    =========================== */
+.hud-corner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.hud-corner svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  filter: 
+    drop-shadow(0 0 8px rgba(10, 140, 155, 0.7))
+    drop-shadow(0 0 16px rgba(10, 140, 155, 0.4));
+  animation: hud-breathe 4s ease-in-out infinite;
+}
+
+/* Scanning line effect */
+.hud-corner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 140, 155, 0.12) 50%, transparent 100%);
+  animation: hud-scan 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes hud-breathe {
+  0%, 100% {
+    filter: 
+      drop-shadow(0 0 8px rgba(10, 140, 155, 0.7))
+      drop-shadow(0 0 16px rgba(10, 140, 155, 0.4));
+  }
+  50% {
+    filter: 
+      drop-shadow(0 0 16px rgba(10, 140, 155, 0.95))
+      drop-shadow(0 0 32px rgba(10, 140, 155, 0.6));
+  }
+}
+
+@keyframes hud-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@media (max-width: 768px) {
+  .hud-corner {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hud-corner {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* ===========================
+   Projects Page - WIP Overlay on Cards
+   =========================== */
+.wip-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.wip-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255, 0, 0, 0.08), transparent 70%),
+    rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.wip-card .wip-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 14%;
+  pointer-events: none;
+  gap: 1rem;
+}
+
+.wip-card-warning {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wip-card-triangle {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 60px solid #ff1a1a;
+  filter:
+    drop-shadow(0 0 6px rgba(255, 200, 0, 0.9))
+    drop-shadow(0 0 12px rgba(255, 0, 0, 0.6));
+  animation: wip-card-pulse 2s ease-in-out infinite;
+}
+
+.wip-card-triangle-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wip-card-triangle-inner span {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 200, 0, 0.5);
+  line-height: 1;
+}
+
+.wip-card-text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.wip-card-text-area .wip-card-subtext:first-child {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ff0000;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.wip-card-text-area .wip-card-subtext:last-child {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.wip-card-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 0, 0, 0.04) 1px,
+    rgba(255, 0, 0, 0.04) 2px
+  );
+  pointer-events: none;
+  animation: wip-card-scan 6s linear infinite;
+  z-index: 5;
+}
+
+/* Disable clicking on WIP cards */
+.wip-card {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.wip-card:hover {
+  transform: none;
+  box-shadow: 0 2px 12px rgba(161, 204, 166, 0.12);
+  border-color: var(--border);
+}
+
+@keyframes wip-card-pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)); }
+}
+
+@keyframes wip-card-scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
+}
+
+@media (max-width: 768px) {
+  .wip-card .wip-card-overlay {
+    padding-top: 12%;
+    gap: 0.85rem;
+  }
+
+  .wip-card-warning {
+    width: 50px;
+    height: 50px;
+  }
+
+  .wip-card-triangle {
+    border-left-width: 25px;
+    border-right-width: 25px;
+    border-bottom-width: 43px;
+  }
+
+  .wip-card-triangle-inner {
+    width: 20px;
+    height: 20px;
+  }
+
+  .wip-card-triangle-inner span {
+    font-size: 1.5rem;
+  }
+
+  .wip-card-text-area .wip-card-subtext:first-child {
+    font-size: 0.95rem;
+  }
+
+  .wip-card-text-area .wip-card-subtext:last-child {
+    font-size: 0.82rem;
+  }
+}
