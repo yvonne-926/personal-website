@@ -38,6 +38,7 @@ body {
   color: var(--text-primary);
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   line-height: 1.7;
+  padding-bottom: 50px;
 }
 
 a {
@@ -194,11 +195,7 @@ img {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(252, 164, 124, 0.22) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 40% at 90% 80%, rgba(249, 215, 121, 0.2) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 15% 50%, rgba(161, 204, 166, 0.18) 0%, transparent 60%),
-    var(--bg-primary);
+  background: var(--bg-primary);
 }
 
 .hero-inner {
@@ -258,9 +255,9 @@ img {
   font-size: clamp(3rem, 9vw, 6rem);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -2px;
   color: var(--accent-deep);
   margin-bottom: 0.75rem;
+  font-family: "Baloo 2", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 .hero-tagline {
@@ -301,30 +298,7 @@ img {
    Scroll Charm
    =========================== */
 .scroll-charm {
-  --grow-1: 0.68;
-  --grow-2: 0.5;
-  --grow-3: 0.38;
-  --stem-1: 0.42;
-  --stem-2: 0.32;
-  --stem-3: 0.24;
-  --leaf-1: 1;
-  --leaf-2: 0.82;
-  --leaf-3: 0.62;
-  --bud-1: 1;
-  --bud-2: 0.85;
-  --bud-3: 0.7;
-  --bloom-1: 0;
-  --bloom-2: 0;
-  --bloom-3: 0;
-  --star-gold: #c88400;
-  position: fixed;
-  top: var(--nav-height);
-  right: 0;
-  width: clamp(220px, 34vw, 460px);
-  height: calc(100vh - var(--nav-height));
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
+  display: none;
 }
 
 .scroll-charm::before,
@@ -627,30 +601,7 @@ img {
 }
 
 .grass-slope {
-  position: absolute;
-  right: -7%;
-  bottom: -7%;
-  width: 108%;
-  height: 62%;
-  background: #08784f;
-  clip-path: polygon(
-    0 100%,
-    0 92%,
-    4% 78%,
-    11% 66%,
-    20% 55%,
-    31% 45%,
-    44% 36%,
-    59% 28%,
-    75% 20%,
-    90% 12%,
-    100% 6%,
-    100% 100%,
-    0 100%
-  );
-  border-radius: 60% 0 0 0;
-  opacity: 0.95;
-  z-index: 1;
+  display: none;
 }
 
 .grass-slope::after {
@@ -694,113 +645,12 @@ section:not(#hero) {
 
 #hero::before,
 section:not(#hero)::before {
-  content: "";
-  position: absolute;
-  top: -12%;
-  right: max(-120px, -8vw);
-  width: clamp(140px, 18vw, 260px);
-  height: 124%;
-  border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    rgba(252, 164, 124, 0.2),
-    rgba(249, 215, 121, 0.32) 45%,
-    rgba(161, 204, 166, 0.18)
-  );
-  opacity: 0.75;
-  transform: rotate(-7deg);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-section:not(#hero)::before {
-  opacity: 0.2;
-  transform: rotate(-7deg) translateY(32px);
-}
-
-section.section-visible::before {
-  opacity: 0.75;
-  transform: rotate(-7deg) translateY(0);
-}
-
-#about::before {
-  background: linear-gradient(
-    180deg,
-    rgba(161, 204, 166, 0.18),
-    rgba(249, 215, 121, 0.26) 52%,
-    rgba(35, 206, 217, 0.12)
-  );
-}
-
-#projects::before {
-  background: linear-gradient(
-    180deg,
-    rgba(249, 215, 121, 0.2),
-    rgba(252, 164, 124, 0.18) 54%,
-    rgba(255, 245, 223, 0.5)
-  );
-}
-
-#contact::before {
-  background: linear-gradient(
-    180deg,
-    rgba(252, 164, 124, 0.18),
-    rgba(249, 215, 121, 0.24) 55%,
-    rgba(35, 206, 217, 0.08)
-  );
+  display: none;
 }
 
 #hero::after,
 section:not(#hero)::after {
-  content: "";
-  position: absolute;
-  inset: -12% -8%;
-  background:
-    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.58), transparent 24%),
-    radial-gradient(circle at 82% 22%, rgba(252, 164, 124, 0.18), transparent 32%),
-    linear-gradient(135deg, rgba(35, 206, 217, 0.12), rgba(249, 215, 121, 0.18), rgba(252, 164, 124, 0.12));
-  opacity: 0;
-  transform: translateY(56px) scale(0.96);
-  transition: opacity 0.95s ease, transform 1.15s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-#hero::after {
-  opacity: 0.72;
-  transform: none;
-}
-
-section.section-visible::after {
-  opacity: 0.62;
-  transform: translateY(18px) scale(0.99);
-}
-
-section.section-current::after {
-  opacity: 0.82;
-  transform: translateY(0) scale(1);
-}
-
-#about::after {
-  background:
-    radial-gradient(circle at 16% 28%, rgba(255, 255, 255, 0.5), transparent 24%),
-    radial-gradient(circle at 82% 26%, rgba(161, 204, 166, 0.3), transparent 34%),
-    linear-gradient(140deg, rgba(223, 247, 249, 0.22), rgba(249, 215, 121, 0.16), rgba(252, 164, 124, 0.1));
-}
-
-#projects::after {
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.48), transparent 24%),
-    radial-gradient(circle at 78% 18%, rgba(249, 215, 121, 0.32), transparent 34%),
-    linear-gradient(145deg, rgba(161, 204, 166, 0.2), rgba(255, 245, 223, 0.42), rgba(35, 206, 217, 0.1));
-}
-
-#contact::after {
-  background:
-    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.55), transparent 26%),
-    radial-gradient(circle at 78% 18%, rgba(252, 164, 124, 0.2), transparent 34%),
-    linear-gradient(145deg, rgba(255, 245, 223, 0.54), rgba(249, 215, 121, 0.22), rgba(35, 206, 217, 0.08));
+  display: none;
 }
 
 .reveal-on-scroll {
@@ -832,10 +682,11 @@ section.section-current::after {
 
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 0.5rem;
   position: relative;
   display: inline-block;
+  font-family: "Baloo 2", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 .section-title::after {
@@ -1139,10 +990,10 @@ section.section-current::after {
 .page-header-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
-  letter-spacing: -1.5px;
   line-height: 1.05;
   margin-bottom: 0.75rem;
   color: var(--accent-deep);
+  font-family: "Baloo 2", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 .page-header-sub {
@@ -1575,10 +1426,16 @@ footer {
   background: var(--accent);
   border-top: none;
   text-align: center;
-  padding: 2rem;
+  padding: 1.25rem 2rem;
   color: var(--accent-deep);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1759,6 +1616,11 @@ footer {
     width: 100%;
     justify-content: center;
   }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ===========================
@@ -1766,14 +1628,7 @@ footer {
     Futuristic Tech Design - Bold Version
     =========================== */
 .hud-corner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
-  z-index: 10;
-  pointer-events: none;
-  opacity: 1;
+  display: none;
 }
 
 .hud-corner svg {
