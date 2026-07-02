@@ -2106,7 +2106,7 @@ footer {
 
 .blog-carousel-slide.active {
   opacity: 1;
-  z-index: 1;
+  z-index: 0;
 }
 
 .blog-carousel-btn {
@@ -2122,10 +2122,11 @@ footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
   color: var(--accent-deep);
   font-size: 1rem;
   transition: all var(--transition);
+  pointer-events: auto;
 }
 
 .blog-carousel-btn:hover {
