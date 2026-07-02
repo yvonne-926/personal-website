@@ -155,3 +155,48 @@ document
     el.classList.add("reveal-on-scroll", "reveal-left");
     observer.observe(el);
   });
+
+// ===========================
+// Blog Image Carousel
+// ===========================
+function initBlogCarousel() {
+  const carousel = document.querySelector(".blog-carousel");
+  if (!carousel) return;
+
+  const slides = carousel.querySelectorAll(".blog-carousel-slide");
+  const prevBtn = carousel.querySelector(".blog-carousel-prev");
+  const nextBtn = carousel.querySelector(".blog-carousel-next");
+  const dots = carousel.querySelectorAll(".blog-carousel-dot");
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
+  nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const index = parseInt(dot.dataset.index);
+      showSlide(index);
+    });
+  });
+
+  // Auto-advance every 5 seconds
+  let autoPlay = setInterval(() => showSlide(currentSlide + 1), 5000);
+
+  // Pause on hover
+  carousel.addEventListener("mouseenter", () => clearInterval(autoPlay));
+  carousel.addEventListener("mouseleave", () => {
+    autoPlay = setInterval(() => showSlide(currentSlide + 1), 5000);
+  });
+}
+
+// Initialize carousel on events page
+initBlogCarousel();
