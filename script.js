@@ -164,11 +164,12 @@ function initBlogCarousel() {
   if (!carousel) return;
 
   const slides = carousel.querySelectorAll(".blog-carousel-slide");
-  const prevBtn = carousel.querySelector(".blog-carousel-prev");
-  const nextBtn = carousel.querySelector(".blog-carousel-next");
   const dots = carousel.querySelectorAll(".blog-carousel-dot");
 
+  if (slides.length === 0) return;
+
   let currentSlide = 0;
+  let autoPlay;
 
   function showSlide(index) {
     slides.forEach((slide) => slide.classList.remove("active"));
@@ -178,24 +179,28 @@ function initBlogCarousel() {
     dots[currentSlide].classList.add("active");
   }
 
-  prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
-  nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
-
+  // Dot clicks
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       const index = parseInt(dot.dataset.index);
       showSlide(index);
+      // Reset timer on manual interaction
+      clearInterval(autoPlay);
+      autoPlay = setInterval(() => showSlide(currentSlide + 1), 3000);
     });
   });
 
-  // Auto-advance every 5 seconds
-  let autoPlay = setInterval(() => showSlide(currentSlide + 1), 5000);
+  // Auto-advance every 3 seconds
+  function startAutoPlay() {
+    autoPlay = setInterval(() => showSlide(currentSlide + 1), 3000);
+  }
 
   // Pause on hover
   carousel.addEventListener("mouseenter", () => clearInterval(autoPlay));
-  carousel.addEventListener("mouseleave", () => {
-    autoPlay = setInterval(() => showSlide(currentSlide + 1), 5000);
-  });
+  carousel.addEventListener("mouseleave", startAutoPlay);
+
+  // Start auto-advance
+  startAutoPlay();
 }
 
 // Initialize carousel on events page
