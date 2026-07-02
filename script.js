@@ -171,52 +171,36 @@ function initBlogCarousel() {
   let currentSlide = 0;
   let autoPlay;
 
-  console.log("Carousel found:", slides.length, "slides");
-
   function showSlide(index) {
-    console.log("showSlide called with index:", index, "currentSlide:", currentSlide);
-    slides.forEach((slide) => slide.classList.remove("active"));
-    dots.forEach((dot) => dot.classList.remove("active"));
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
     currentSlide = (index + slides.length) % slides.length;
-    console.log("New currentSlide:", currentSlide);
     slides[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
   }
 
   // Dot clicks
-  dots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const index = parseInt(dot.dataset.index);
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", function() {
+      const index = parseInt(this.dataset.index);
       showSlide(index);
       clearInterval(autoPlay);
-      autoPlay = setInterval(() => showSlide(currentSlide + 1), 3000);
+      autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
     });
-  });
-
-  // Auto-advance every 3 seconds
-  function startAutoPlay() {
-    console.log("startAutoPlay called");
-    autoPlay = setInterval(() => {
-      console.log("interval tick, advancing to:", currentSlide + 1);
-      showSlide(currentSlide + 1);
-    }, 3000);
   }
 
+  // Auto-advance every 3 seconds
+  autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
+
   // Pause on hover
-  carousel.addEventListener("mouseenter", () => {
-    console.log("pause autoplay");
-    clearInterval(autoPlay);
+  carousel.addEventListener("mouseenter", function() { clearInterval(autoPlay); });
+  carousel.addEventListener("mouseleave", function() {
+    autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
   });
-  carousel.addEventListener("mouseleave", () => {
-    console.log("resume autoplay");
-    startAutoPlay();
-  });
-
-  // Start auto-advance
-  startAutoPlay();
 }
 
-// Initialize carousel on events page
-if (document.querySelector(".blog-carousel")) {
-  initBlogCarousel();
-}
+initBlogCarousel();
