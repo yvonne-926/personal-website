@@ -2106,14 +2106,20 @@ footer {
 
 .blog-carousel-slide.active {
   opacity: 1;
+  z-index: 1;
 }
 
 .blog-carousel-dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: 8px;
   padding: 12px 0;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .blog-carousel-dot {
