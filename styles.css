@@ -1967,7 +1967,109 @@ footer {
     font-size: 0.95rem;
   }
 
-  .wip-card-text-area .wip-card-subtext:last-child {
+.wip-card-text-area .wip-card-subtext:last-child {
     font-size: 0.82rem;
+  }
+}
+
+/* ===========================
+   Events Preview (index.html)
+   =========================== */
+#events-preview {
+  background-color: #fff8e6;
+}
+
+.events-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 12px rgba(249, 215, 121, 0.12);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(249, 215, 121, 0.2);
+  border-color: var(--accent-yellow);
+}
+
+.event-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.event-card-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.event-card-category {
+  font-size: 0.75rem;
+  background: rgba(249, 215, 121, 0.25);
+  color: var(--accent-deep);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.event-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+  margin: 0;
+}
+
+.event-card-excerpt {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.event-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.event-tag {
+  font-size: 0.75rem;
+  background: rgba(249, 215, 121, 0.3);
+  color: var(--accent-deep);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.event-card-readmore {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-coral);
+  margin-top: 0.5rem;
+  transition: text-decoration var(--transition);
+}
+
+.event-card:hover .event-card-readmore {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .events-preview-grid {
+    grid-template-columns: 1fr;
   }
 }
