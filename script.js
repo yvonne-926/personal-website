@@ -171,10 +171,14 @@ function initBlogCarousel() {
   let currentSlide = 0;
   let autoPlay;
 
+  console.log("Carousel found:", slides.length, "slides");
+
   function showSlide(index) {
+    console.log("showSlide called with index:", index, "currentSlide:", currentSlide);
     slides.forEach((slide) => slide.classList.remove("active"));
     dots.forEach((dot) => dot.classList.remove("active"));
     currentSlide = (index + slides.length) % slides.length;
+    console.log("New currentSlide:", currentSlide);
     slides[currentSlide].classList.add("active");
     dots[currentSlide].classList.add("active");
   }
@@ -184,7 +188,6 @@ function initBlogCarousel() {
     dot.addEventListener("click", () => {
       const index = parseInt(dot.dataset.index);
       showSlide(index);
-      // Reset timer on manual interaction
       clearInterval(autoPlay);
       autoPlay = setInterval(() => showSlide(currentSlide + 1), 3000);
     });
@@ -192,16 +195,28 @@ function initBlogCarousel() {
 
   // Auto-advance every 3 seconds
   function startAutoPlay() {
-    autoPlay = setInterval(() => showSlide(currentSlide + 1), 3000);
+    console.log("startAutoPlay called");
+    autoPlay = setInterval(() => {
+      console.log("interval tick, advancing to:", currentSlide + 1);
+      showSlide(currentSlide + 1);
+    }, 3000);
   }
 
   // Pause on hover
-  carousel.addEventListener("mouseenter", () => clearInterval(autoPlay));
-  carousel.addEventListener("mouseleave", startAutoPlay);
+  carousel.addEventListener("mouseenter", () => {
+    console.log("pause autoplay");
+    clearInterval(autoPlay);
+  });
+  carousel.addEventListener("mouseleave", () => {
+    console.log("resume autoplay");
+    startAutoPlay();
+  });
 
   // Start auto-advance
   startAutoPlay();
 }
 
 // Initialize carousel on events page
-initBlogCarousel();
+if (document.querySelector(".blog-carousel")) {
+  initBlogCarousel();
+}
