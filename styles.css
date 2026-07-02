@@ -1819,7 +1819,125 @@ footer {
   100% { transform: translateY(2px); }
 }
 
+/* ===========================
+   BLOG POST STYLES (events)
+   =========================== */
+
+.blog-post {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.blog-post:hover {
+  border-color: var(--accent);
+}
+
+.blog-post-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-post-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.blog-post-category {
+  font-size: 0.75rem;
+  background: rgba(10, 107, 117, 0.15);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.blog-post-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.25rem;
+  line-height: 1.2;
+}
+
+.blog-post-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+}
+
+.blog-post-image {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.blog-post-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.blog-post-content {
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.blog-tag {
+  font-size: 0.75rem;
+  background: rgba(10, 107, 117, 0.1);
+  color: var(--accent);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Blog post modal for featured projects */
+.project-card--featured .project-card-readmore {
+  display: block;
+}
+
 @media (max-width: 768px) {
+  .blog-post {
+    padding: 1.5rem;
+  }
+
+  .blog-post-title {
+    font-size: 1.4rem;
+  }
+
+  .blog-post-subtitle {
+    font-size: 1rem;
+  }
+
+  .blog-post-header {
+    gap: 0.75rem;
+  }
+
   .wip-card .wip-card-overlay {
     padding-top: 12%;
     gap: 0.85rem;
