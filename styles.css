@@ -2075,14 +2075,59 @@ footer {
 }
 
 /* ===========================
-   Blog Image Carousel
-   =========================== */
+    Blog Image Carousel
+    =========================== */
 .blog-carousel {
   position: relative;
   margin: 1.5rem 0;
   border-radius: 6px;
   border: 1px solid var(--border);
   background: var(--bg-card);
+}
+
+/* Carousel Arrow Navigation */
+.blog-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(15, 160, 175, 0.3);
+  color: var(--accent-deep);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.25s ease;
+  opacity: 0;
+  backdrop-filter: blur(4px);
+}
+
+.blog-carousel:hover .blog-carousel-arrow {
+  opacity: 1;
+}
+
+.blog-carousel-arrow:hover {
+  background: rgba(15, 160, 175, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 16px rgba(15, 160, 175, 0.3);
+}
+
+.blog-carousel-arrow:active {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.blog-carousel-arrow-prev {
+  left: 12px;
+}
+
+.blog-carousel-arrow-next {
+  right: 12px;
 }
 
 .blog-carousel-slide-container {

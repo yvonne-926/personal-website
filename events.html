@@ -235,6 +235,12 @@
                 <span class="blog-carousel-dot" data-index="3"></span>
               </div>
             </div>
+            <button class="blog-carousel-arrow blog-carousel-arrow-prev" aria-label="Previous image">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="blog-carousel-arrow blog-carousel-arrow-next" aria-label="Next image">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
           <div class="blog-post-content">
             <p>
@@ -276,11 +282,17 @@
     <script src="script.js?v=2"></script>
     <script>
       (function() {
+        var carousel = document.querySelector(".blog-carousel");
         var slides = document.querySelectorAll("img.blog-carousel-slide");
         var dots = document.querySelectorAll(".blog-carousel-dot");
+        var arrows = document.querySelectorAll(".blog-carousel-arrow");
         var current = 0;
+        var autoPlayInterval;
+        var isTransitioning = false;
 
-        function showSlide(index) {
+        function showSlide(index, skipTransition) {
+          if (isTransitioning && !skipTransition) return;
+          
           for (var i = 0; i < slides.length; i++) {
             slides[i].style.opacity = "0";
             slides[i].style.zIndex = "0";
@@ -289,22 +301,96 @@
             dots[i].setAttribute("class", "blog-carousel-dot");
           }
           current = index % slides.length;
+          if (current < 0) current = slides.length - 1;
           slides[current].style.opacity = "1";
           slides[current].style.zIndex = "1";
           dots[current].setAttribute("class", "blog-carousel-dot active");
         }
 
+        function nextSlide() {
+          showSlide(current + 1);
+        }
+
+        function prevSlide() {
+          showSlide(current - 1);
+        }
+
+        // Dot click handlers
         for (var i = 0; i < dots.length; i++) {
           (function(idx) {
             dots[idx].onclick = function() {
               showSlide(idx);
+              resetAutoPlay();
             };
           })(i);
         }
 
-        setInterval(function() {
-          showSlide(current + 1);
-        }, 3000);
+        // Arrow click handlers
+        arrows.forEach(function(arrow, index) {
+          arrow.addEventListener('click', function() {
+            if (index === 0) {
+              prevSlide();
+            } else {
+              nextSlide();
+            }
+            resetAutoPlay();
+          });
+        });
+
+        // Auto-play with longer interval and pause on hover
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoPlay() {
+          clearInterval(autoPlayInterval);
+          startAutoPlay();
+        }
+
+        carousel.addEventListener('mouseenter', function() {
+          clearInterval(autoPlayInterval);
+        });
+
+        carousel.addEventListener('mouseleave', function() {
+          startAutoPlay();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoPlay();
+          } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoPlay();
+          }
+        });
+
+        // Touch/swipe support
+        var touchStartX = 0;
+        var touchEndX = 0;
+
+        carousel.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+          clearInterval(autoPlayInterval);
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          var diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+            resetAutoPlay();
+          } else {
+            startAutoPlay();
+          }
+        }, { passive: true });
+
+        startAutoPlay();
       })();
     </script>
   </body>
