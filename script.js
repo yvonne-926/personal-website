@@ -160,47 +160,64 @@ document
 // Blog Image Carousel
 // ===========================
 function initBlogCarousel() {
-  const carousel = document.querySelector(".blog-carousel");
-  if (!carousel) return;
-
-  const slides = carousel.querySelectorAll(".blog-carousel-slide");
-  const dots = carousel.querySelectorAll(".blog-carousel-dot");
-
-  if (slides.length === 0) return;
-
-  let currentSlide = 0;
-  let autoPlay;
-
-  function showSlide(index) {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].classList.remove("active");
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
+  console.log("Blog carousel init called");
+  
+  const container = document.querySelector(".blog-carousel-slide-container");
+  if (!container) {
+    console.log("No slide container found");
+    return;
   }
 
-  // Dot clicks
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", function() {
-      const index = parseInt(this.dataset.index);
-      showSlide(index);
-      clearInterval(autoPlay);
-      autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
-    });
+  const allSlides = container.querySelectorAll("img.blog-carousel-slide");
+  const allDots = document.querySelectorAll(".blog-carousel-dot");
+  
+  console.log("Found", allSlides.length, "slides and", allDots.length, "dots");
+
+  let current = 0;
+
+  function goTo(index) {
+    console.log("Going to slide", index);
+    for (var i = 0; i < allSlides.length; i++) {
+      allSlides[i].classList.remove("active");
+    }
+    for (var i = 0; i < allDots.length; i++) {
+      allDots[i].classList.remove("active");
+    }
+    current = index;
+    allSlides[current].classList.add("active");
+    allDots[current].classList.add("active");
+  }
+
+  // Dot click handlers
+  for (var i = 0; i < allDots.length; i++) {
+    (function(idx) {
+      allDots[idx].addEventListener("click", function() {
+        console.log("Dot clicked:", idx);
+        goTo(idx);
+        clearInterval(timer);
+        timer = setInterval(function() { goTo(current + 1); }, 3000);
+      });
+    })(i);
   }
 
   // Auto-advance every 3 seconds
-  autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
+  var timer = setInterval(function() {
+    console.log("Auto-advancing to", current + 1);
+    goTo(current + 1);
+  }, 3000);
 
   // Pause on hover
-  carousel.addEventListener("mouseenter", function() { clearInterval(autoPlay); });
-  carousel.addEventListener("mouseleave", function() {
-    autoPlay = setInterval(function() { showSlide(currentSlide + 1); }, 3000);
-  });
+  var carousel = document.querySelector(".blog-carousel");
+  if (carousel) {
+    carousel.addEventListener("mouseenter", function() {
+      console.log("Pause");
+      clearInterval(timer);
+    });
+    carousel.addEventListener("mouseleave", function() {
+      console.log("Resume");
+      timer = setInterval(function() { goTo(current + 1); }, 3000);
+    });
+  }
 }
 
 initBlogCarousel();
