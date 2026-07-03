@@ -273,6 +273,40 @@
       <p>Designed & built by Yvonne &mdash; <span id="year"></span></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
+    <script>
+      console.log("INLINE SCRIPT RUNNING");
+      var container = document.querySelector(".blog-carousel-slide-container");
+      console.log("Container:", container);
+      if (container) {
+        var slides = container.querySelectorAll("img.blog-carousel-slide");
+        var dots = document.querySelectorAll(".blog-carousel-dot");
+        console.log("Slides:", slides.length, "Dots:", dots.length);
+        if (slides.length > 0 && dots.length > 0) {
+          var current = 0;
+          function goTo(idx) {
+            console.log("goTo called with", idx);
+            for (var i = 0; i < slides.length; i++) {
+              slides[i].classList.remove("active");
+            }
+            for (var i = 0; i < dots.length; i++) {
+              dots[i].classList.remove("active");
+            }
+            current = idx;
+            slides[current].classList.add("active");
+            dots[current].classList.add("active");
+            console.log("Applied active to slide", current, "and dot", current);
+          }
+          for (var i = 0; i < dots.length; i++) {
+            dots[i].addEventListener("click", function() {
+              console.log("DOT CLICKED");
+              goTo(parseInt(this.dataset.index));
+            });
+          }
+          setInterval(function() { goTo(current + 1); }, 3000);
+          console.log("Carousel initialized!");
+        }
+      }
+    </script>
   </body>
 </html>
