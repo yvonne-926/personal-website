@@ -709,7 +709,7 @@ section:not(#hero)::after {
    About Section
    =========================== */
 #about {
-  background-color: #e4f7ee;
+  background-color: #d0ede8;
   padding: 7rem 2rem;
 }
 
@@ -782,7 +782,7 @@ section:not(#hero)::after {
    Projects Section
    =========================== */
 #projects {
-  background-color: #f0f9e0;
+  background-color: #e0f2d8;
 }
 
 .projects-grid {
@@ -880,7 +880,7 @@ section:not(#hero)::after {
    Contact Section
    =========================== */
 #contact {
-  background-color: #fff5df;
+  background-color: #f0e6cc;
 }
 
 .contact-form {
@@ -2048,7 +2048,7 @@ footer {
    Events Preview (index.html)
    =========================== */
 #events-preview {
-  background-color: #fff8e6;
+  background-color: #f0e4c8;
 }
 
 .events-preview-grid {
