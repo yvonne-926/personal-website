@@ -1080,6 +1080,72 @@ section:not(#hero)::after {
 }
 
 /* ===========================
+   Locked / Access Denied Project Card
+   =========================== */
+.project-card--locked {
+  border-color: var(--text-secondary);
+  opacity: 0.65;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card--locked::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(6, 78, 87, 0.03) 10px,
+    rgba(6, 78, 87, 0.03) 20px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project-card--locked:hover {
+  transform: none;
+  box-shadow: 0 2px 12px rgba(6, 78, 87, 0.1);
+}
+
+.project-card--locked .project-icon {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.project-card--locked .project-links {
+  position: relative;
+  z-index: 1;
+}
+
+.project-locked-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--text-secondary);
+  color: var(--bg-primary);
+  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+}
+
+.project-badge--locked {
+  background: var(--text-secondary);
+  color: var(--bg-primary);
+}
+
+.project-tags--locked li {
+  background: rgba(6, 78, 87, 0.08);
+  color: var(--text-secondary);
+}
+
+.project-card-readmore--locked {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ===========================
    Project detail modal
    =========================== */
 .modal-overlay {
@@ -1144,11 +1210,12 @@ section:not(#hero)::after {
 .modal-image-wrap {
   background: var(--bg-secondary);
   border-radius: 20px 20px 0 0;
-  height: 300px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .modal-image-placeholder {

@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yvonne | Personal Website</title>
+    <title>Jetson Orin Nano | Yvonne</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -14,27 +12,11 @@
     />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-      <div class="nav-container">
-        <a href="#hero" class="nav-logo">Yvonne</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="events.html">Events</a></li>
-        </ul>
-      </div>
-    </nav>
-
     <!-- HUD Corner Decoration (bottom-left) - Futuristic Tech Design -->
     <div class="hud-corner" aria-hidden="true">
       <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Dark solid background panel -->
         <rect x="5" y="5" width="135" height="135" rx="4" fill="rgba(10, 140, 155, 0.08)" stroke="rgba(10, 140, 155, 0.3)" stroke-width="1"/>
-        
         <!-- Background grid pattern -->
         <g opacity="0.15">
           <line x1="25" y1="5" x2="25" y2="140" stroke="#0fa0af" stroke-width="0.5"/>
@@ -48,18 +30,15 @@
           <line x1="5" y1="100" x2="140" y2="100" stroke="#0fa0af" stroke-width="0.5"/>
           <line x1="5" y1="125" x2="140" y2="125" stroke="#0fa0af" stroke-width="0.5"/>
         </g>
-        
         <!-- Main L-shaped corner bracket (very thick) -->
         <path d="M 8 120 L 8 8 L 120 8" stroke="#0a6b75" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
         <path d="M 16 112 L 16 16 L 112 16" stroke="#0fa0af" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
         <path d="M 24 104 L 24 24 L 104 24" stroke="#0fa0af" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" opacity="0.5"/>
-        
         <!-- Corner accent - large filled squares at the inner corner -->
         <rect x="3" y="115" width="14" height="14" fill="#0a6b75" rx="2"/>
         <rect x="6" y="118" width="8" height="8" fill="#0fa0af" rx="1"/>
         <rect x="115" y="3" width="14" height="14" fill="#0a6b75" rx="2"/>
         <rect x="118" y="6" width="8" height="8" fill="#0fa0af" rx="1"/>
-        
         <!-- Vertical circuit traces going down (thick) -->
         <path d="M 40 8 L 40 55 L 65 55 L 65 95" stroke="#0a6b75" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
         <path d="M 44 8 L 44 52 L 62 52 L 62 90" stroke="#0fa0af" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/>
@@ -69,14 +48,12 @@
           <animate attributeName="r" values="2.5;4.5;2.5" dur="2s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
         </circle>
-        
         <path d="M 90 8 L 90 45 L 115 45 L 115 75" stroke="#0a6b75" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
         <path d="M 93 8 L 93 42 L 112 42 L 112 72" stroke="#0fa0af" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"/>
         <circle cx="115" cy="75" r="6" fill="none" stroke="#0a6b75" stroke-width="1.5"/>
         <circle cx="115" cy="75" r="3.5" fill="#0fa0af" opacity="0.7">
           <animate attributeName="r" values="3;5;3" dur="2.2s" repeatCount="indefinite"/>
         </circle>
-        
         <!-- Horizontal circuit traces going right (thick) -->
         <path d="M 8 40 L 55 40 L 55 65 L 95 65" stroke="#0a6b75" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
         <path d="M 8 44 L 52 44 L 52 62 L 90 62" stroke="#0fa0af" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/>
@@ -86,19 +63,16 @@
           <animate attributeName="r" values="2.5;4.5;2.5" dur="2.5s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
         </circle>
-        
         <!-- Additional parallel traces -->
         <path d="M 8 70 L 45 70 L 45 88 L 68 88" stroke="#0a6b75" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" opacity="0.6"/>
         <path d="M 8 90 L 35 90 L 35 105 L 55 105" stroke="#0a6b75" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" opacity="0.4"/>
         <path d="M 70 8 L 70 38 L 88 38 L 88 55" stroke="#0a6b75" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" opacity="0.6"/>
         <path d="M 90 8 L 90 30 L 105 30 L 105 50" stroke="#0a6b75" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" opacity="0.4"/>
-        
         <!-- Solder pad rectangles -->
         <rect x="60" y="60" width="12" height="12" fill="#0a6b75" opacity="0.5" rx="2"/>
         <rect x="62" y="62" width="8" height="8" fill="#0fa0af" opacity="0.3" rx="1"/>
         <rect x="40" y="60" width="12" height="12" fill="#0a6b75" opacity="0.4" rx="2"/>
         <rect x="20" y="85" width="10" height="10" fill="#0a6b75" opacity="0.35" rx="2"/>
-        
         <!-- Data stream bars (vertical equalizer style) - BOLD -->
         <g opacity="0.7">
           <rect x="100" y="90" width="6" height="18" fill="#0a6b75" rx="1.5">
@@ -109,7 +83,6 @@
             <animate attributeName="height" values="14;22;8;14" dur="1.2s" repeatCount="indefinite"/>
             <animate attributeName="y" values="92;84;90;92" dur="1.2s" repeatCount="indefinite"/>
           </rect>
-          
           <rect x="110" y="85" width="6" height="23" fill="#0a6b75" rx="1.5">
             <animate attributeName="height" values="23;14;28;23" dur="1.5s" repeatCount="indefinite"/>
             <animate attributeName="y" values="85;94;80;85" dur="1.5s" repeatCount="indefinite"/>
@@ -118,7 +91,6 @@
             <animate attributeName="height" values="19;10;24;19" dur="1.5s" repeatCount="indefinite"/>
             <animate attributeName="y" values="87;96;82;87" dur="1.5s" repeatCount="indefinite"/>
           </rect>
-          
           <rect x="120" y="80" width="6" height="28" fill="#0a6b75" rx="1.5">
             <animate attributeName="height" values="28;18;22;28" dur="1.8s" repeatCount="indefinite"/>
             <animate attributeName="y" values="80;90;86;80" dur="1.8s" repeatCount="indefinite"/>
@@ -127,7 +99,6 @@
             <animate attributeName="height" values="24;14;18;24" dur="1.8s" repeatCount="indefinite"/>
             <animate attributeName="y" values="82;92;86;82" dur="1.8s" repeatCount="indefinite"/>
           </rect>
-          
           <rect x="130" y="88" width="6" height="20" fill="#0a6b75" rx="1.5">
             <animate attributeName="height" values="20;28;12;20" dur="1.4s" repeatCount="indefinite"/>
             <animate attributeName="y" values="88;80;96;88" dur="1.4s" repeatCount="indefinite"/>
@@ -136,7 +107,6 @@
             <animate attributeName="height" values="16;24;8;16" dur="1.4s" repeatCount="indefinite"/>
             <animate attributeName="y" values="90;82;98;90" dur="1.4s" repeatCount="indefinite"/>
           </rect>
-          
           <rect x="140" y="82" width="6" height="26" fill="#0a6b75" rx="1.5">
             <animate attributeName="height" values="26;16;30;26" dur="1.6s" repeatCount="indefinite"/>
             <animate attributeName="y" values="82;92;78;82" dur="1.6s" repeatCount="indefinite"/>
@@ -146,7 +116,6 @@
             <animate attributeName="y" values="84;94;80;84" dur="1.6s" repeatCount="indefinite"/>
           </rect>
         </g>
-        
         <!-- Hexagonal sensor node - BOLD -->
         <g transform="translate(150, 55)">
           <polygon points="25,6 40,14 40,32 25,40 10,32 10,14" stroke="#0a6b75" stroke-width="2.5" fill="rgba(10,107,117,0.15)"/>
@@ -159,7 +128,6 @@
           </circle>
           <circle cx="25" cy="22" r="1.5" fill="#dff7f9" opacity="0.8"/>
         </g>
-        
         <!-- Radar sweep arc - BOLD -->
         <g transform="translate(140, 130)" opacity="0.5">
           <circle cx="0" cy="0" r="30" stroke="#0a6b75" stroke-width="1.5" stroke-dasharray="4 6"/>
@@ -169,14 +137,12 @@
             <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
           </line>
         </g>
-        
         <!-- Signal waves emanating - BOLD -->
         <g opacity="0.5">
           <path d="M 175 100 Q 190 88 205 100" stroke="#0a6b75" stroke-width="2" fill="none" stroke-linecap="round"/>
           <path d="M 165 92 Q 190 74 215 92" stroke="#0a6b75" stroke-width="1.5" fill="none" stroke-linecap="round"/>
           <path d="M 155 84 Q 190 60 225 84" stroke="#0a6b75" stroke-width="1" fill="none" stroke-linecap="round"/>
         </g>
-        
         <!-- Crosshair markers at key points - BOLD -->
         <g opacity="0.6">
           <line x1="190" y1="30" x2="190" y2="42" stroke="#0a6b75" stroke-width="1.5"/>
@@ -186,19 +152,15 @@
           <line x1="190" y1="170" x2="190" y2="182" stroke="#0a6b75" stroke-width="1.5"/>
           <line x1="185" y1="176" x2="195" y2="176" stroke="#0a6b75" stroke-width="1.5"/>
         </g>
-        
         <!-- Diagonal data lines - BOLD -->
         <path d="M 120 120 L 170 170" stroke="#0a6b75" stroke-width="1.5" stroke-linecap="round" opacity="0.4" stroke-dasharray="6 4"/>
         <path d="M 100 120 L 140 170" stroke="#0a6b75" stroke-width="1" stroke-linecap="round" opacity="0.25" stroke-dasharray="4 6"/>
-        
         <!-- Corner tech accents - large triangles -->
         <polygon points="20,110 32,110 20,122" fill="#0a6b75" opacity="0.6"/>
         <polygon points="110,20 122,20 110,32" fill="#0a6b75" opacity="0.6"/>
-        
         <!-- Tech decoration blocks -->
         <rect x="130" y="8" width="8" height="5" fill="#0a6b75" rx="1" opacity="0.5"/>
         <rect x="8" y="130" width="5" height="8" fill="#0a6b75" rx="1" opacity="0.5"/>
-        
         <!-- Animated data particles -->
         <circle r="2.5" fill="#0a6b75" opacity="0">
           <animate attributeName="cx" values="40;65;65;95" dur="3s" repeatCount="indefinite"/>
@@ -210,8 +172,6 @@
           <animate attributeName="cy" values="8;50;50;80" dur="2.5s" repeatCount="indefinite"/>
           <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2.5s" repeatCount="indefinite"/>
         </circle>
-        
-        <!-- Gradient definitions -->
         <defs>
           <linearGradient id="hudGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#0fa0af"/>
@@ -225,284 +185,77 @@
       </svg>
     </div>
 
-    <div class="scroll-charm" id="scroll-charm" aria-hidden="true">
-      <span class="garden-line"></span>
-      <span class="hanging-star star-one"></span>
-      <span class="hanging-star star-two"></span>
-      <span class="hanging-star star-three"></span>
-      <span class="hanging-star star-four"></span>
-      <span class="hanging-star star-five"></span>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="hero">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-name">Hi, I'm Yvonne</h1>
-          <p class="hero-tagline">Welcome to my personal website ^^</p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="hero-image-frame">
-            <!-- Replace with: <img src="your-photo.jpg" alt="Yvonne" /> -->
-            <i class="fas fa-user"></i>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scroll-hint">
-        <a href="#about"><i class="fas fa-chevron-down"></i></a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-      <div class="section-container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-avatar">
-            <div class="avatar-placeholder">
-              <!-- Replace with: <img src="your-photo.jpg" alt="Yvonne" /> -->
-              <i class="fas fa-user"></i>
-            </div>
-          </div>
-<div class="about-text">
-            <h1>
-              hi! i'm yvonne
-            </h1>
-            <p>
-              & welcome to my personal website. although it's a heavy work in progress (which means this description will also be updated), i hope to continue updating it as a personal side project. 
-            </p>
-            <p>
-              ( COME BACK SOON! )
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="section-container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Some things I've built</p>
-        <div class="projects-grid">
-
-          <!-- Project Card 1 - Personal Website (Featured) -->
-          <article class="project-card project-card--featured" role="button" tabindex="0"
-            data-title="PERSONAL WEBSITE (AKA. THIS ONE)"
-            data-badge="Featured"
-            data-desc="This website was designed as a place to showcase some of my work and share a bit about myself. Although currently a heavy
-              work in progress, I plan to continue updating it as a personal project -- and as I learn more."
-            data-tags="HTML,CSS,JavaScript"
-            data-page="project-personal-website.html"
-          >
-            <div class="project-card-header">
-              <i class="fas fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-            <span class="project-badge">Featured</span>
-            <h3 class="project-title">PERSONAL WEBSITE (AKA. THIS ONE)</h3>
-            <p class="project-description">
-              My first independent project is actually the website you're looking at right now!
-            </p>
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
-          </article>
-
-          <!-- Project Card 2 - Volunteer Finder -->
-          <article class="project-card project-card--featured" role="button" tabindex="0"
-            data-title="VOLUNTEER FINDER"
-            data-badge="Ongoing"
-            data-desc="A personal tool I built to help me conveniently find volunteer opportunities I'm willing to travel to — mostly STEM-related ones. It pulls from a wide array of sources and sends me daily emails with new opportunities so I can easily track and log my high school volunteer hours. Pretty much complete!"
-            data-tags="HTML,CSS,JavaScript,API,STEM"
-            data-page="project-volunteer-finder.html"
-          >
-            <div class="project-card-header">
-              <i class="fas fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-            <span class="project-badge">Ongoing</span>
-            <h3 class="project-title">VOLUNTEER FINDER</h3>
-            <p class="project-description">
-              Pulls from multiple sources and sends daily emails with STEM volunteer
-              opportunities nearby — helping me track my high school volunteer hours.
-            </p>
-            <ul class="project-tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>API</li>
-              <li>STEM</li>
-            </ul>
-            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
-          </article>
-
-          <!-- Project Card 3 - Access Denied / Private -->
-          <article class="project-card project-card--locked" role="button" tabindex="0">
-            <div class="project-card-header">
-              <i class="fas fa-lock project-icon"></i>
-              <div class="project-links">
-                <span class="project-locked-badge">Private</span>
-              </div>
-            </div>
-            <span class="project-badge project-badge--locked">Coming Soon</span>
-            <h3 class="project-title">PRIVATE PROJECT</h3>
-            <p class="project-description">
-              Something cool is in the works. This project is currently private and will be revealed soon.
-            </p>
-            <ul class="project-tags project-tags--locked">
-              <li>Private</li>
-              <li>Locked</li>
-            </ul>
-            <span class="project-card-readmore project-card-readmore--locked">Access Denied <i class="fas fa-lock"></i></span>
-          </article>
-        </div>
-
-        <!-- View All Projects Button -->
-        <div class="projects-cta" style="text-align: center; margin-top: 2rem;">
-          <a href="projects.html" class="btn btn-primary">View All Projects <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Events Preview Section -->
-    <section id="events-preview">
-      <div class="section-container">
-        <h2 class="section-title">Events</h2>
-        <p class="section-subtitle">Latest updates and project logs</p>
-        <div class="events-preview-grid">
-
-          <!-- Event Card 1 - Jetson -->
-          <article class="event-card" role="button" tabindex="0" onclick="window.location.href='events.html'">
-            <div class="event-card-header">
-              <span class="event-card-date">July 2026</span>
-              <span class="event-card-category">Project Series</span>
-            </div>
-            <h3 class="event-card-title">Building the Jetson Orin Nano</h3>
-            <p class="event-card-excerpt">
-              An ongoing project to build an AI-powered system from the ground up using the NVIDIA Jetson Orin Nano. Documenting the full build process — from hardware assembly to deploying real-time AI models on the edge.
-            </p>
-            <div class="event-card-tags">
-              <span class="event-tag">Jetson</span>
-              <span class="event-tag">AI</span>
-              <span class="event-tag">Robotics</span>
-              <span class="event-tag">Edge Computing</span>
-            </div>
-            <span class="event-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
-          </article>
-
-        </div>
-
-        <!-- View All Events Button -->
-        <div class="events-cta" style="text-align: center; margin-top: 2rem;">
-          <a href="events.html" class="btn btn-primary">View All Events <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Project Detail Modal -->
-    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-      <div class="modal">
-        <button class="modal-close" id="modal-close" aria-label="Close">
-          <i class="fas fa-times"></i>
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Yvonne</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
         </button>
-        <div class="modal-image-wrap">
-          <div class="modal-image-placeholder"><i class="fas fa-folder-open"></i></div>
-        </div>
-        <div class="modal-body">
-          <span class="project-badge modal-badge" id="modal-badge" hidden></span>
-          <h2 class="modal-title" id="modal-title"></h2>
-          <ul class="project-tags modal-tags" id="modal-tags"></ul>
-          <p class="modal-desc" id="modal-desc"></p>
-          <div class="modal-actions">
-            <a href="#" class="btn btn-primary" id="modal-demo" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-            <a href="#" class="btn btn-secondary" id="modal-github" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="projects.html" class="nav-active">Projects</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
-    <!-- Project Modal Script -->
-    <script>
-      // Project detail modal for index.html
-      (function() {
-        const modal = document.getElementById("project-modal");
-        const modalClose = document.getElementById("modal-close");
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header-inner">
+        <p class="page-header-label">project</p>
+        <h1 class="page-header-title">Jetson Orin Nano</h1>
+        <p class="page-header-sub">Building an AI-powered edge computer from scratch</p>
+      </div>
+    </header>
 
-        function openModal(card) {
-          document.getElementById("modal-title").textContent = card.dataset.title || "";
-          document.getElementById("modal-desc").textContent = card.dataset.desc || "";
+    <!-- Project Detail -->
+    <main class="page-main">
+      <div class="section-container">
 
-          const badge = document.getElementById("modal-badge");
-          if (card.dataset.badge) {
-            badge.textContent = card.dataset.badge;
-            badge.hidden = false;
-          } else {
-            badge.hidden = true;
-          }
+        <!-- Project Blog Post -->
+        <article class="blog-post">
+          <div class="blog-post-header">
+            <span class="blog-post-date">July 2026</span>
+            <span class="blog-post-category">Ongoing</span>
+          </div>
+          <h2 class="blog-post-title">Building the Jetson Orin Nano</h2>
+          <h3 class="blog-post-subtitle">Documenting my journey into hardware, robotics, and edge AI</h3>
 
-          const tagsEl = document.getElementById("modal-tags");
-          tagsEl.innerHTML = (card.dataset.tags || "").split(",").map(t =>
-            `<li>${t.trim()}</li>`).join("");
+          <div class="blog-post-content">
+            <p>
+              This project is part of my journey into hardware, robotics, and edge AI. I'm building an
+              AI-powered system from the ground up using the NVIDIA Jetson Orin Nano — a powerful
+              edge computing device designed for AI and machine learning workloads.
+            </p>
+            <p>
+              This series documents the entire build process — from hardware assembly and OS setup to
+              deploying real-time AI models on the edge. Each update will cover a new milestone in the
+              build, so you can follow along as the project evolves.
+            </p>
+            <p>
+              <strong>So far:</strong> Basic hardware assembled and dev kit is running.
+            </p>
+            <p>
+              <strong>Next steps:</strong> Flashing the OS, setting up the development environment,
+              and exploring computer vision models that can run on the device.
+            </p>
+          </div>
+          <div class="blog-post-tags">
+            <span class="blog-tag">Jetson</span>
+            <span class="blog-tag">AI</span>
+            <span class="blog-tag">Robotics</span>
+            <span class="blog-tag">Edge Computing</span>
+            <span class="blog-tag">CV</span>
+          </div>
+        </article>
 
-          document.getElementById("modal-github").href = card.dataset.github || "#";
-          document.getElementById("modal-demo").href = card.dataset.demo || "#";
-
-          modal.hidden = false;
-          document.body.style.overflow = "hidden";
-          modalClose.focus();
-        }
-
-        function closeModal() {
-          modal.hidden = true;
-          document.body.style.overflow = "";
-        }
-
-        document.querySelectorAll(".project-card[role='button']").forEach((card) => {
-          // If card has data-page, navigate to project page instead of opening modal
-          if (card.dataset.page) {
-            card.addEventListener("click", () => {
-              window.location.href = card.dataset.page;
-            });
-            card.addEventListener("keydown", (e) => {
-              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.location.href = card.dataset.page; }
-            });
-          } else {
-            card.addEventListener("click", () => openModal(card));
-            card.addEventListener("keydown", (e) => {
-              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(card); }
-            });
-          }
-        });
-
-        modalClose.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-      })();
-    </script>
+      </div>
+    </main>
 
     <!-- Footer -->
     <footer>
-      <p>
-        Designed &amp; built by Yvonne &mdash;
-        <span id="year"></span>
-      </p>
+      <p>Designed & built by Yvonne &mdash; <span id="year"></span></p>
     </footer>
 
     <script src="script.js"></script>

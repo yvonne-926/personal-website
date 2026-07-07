@@ -231,8 +231,7 @@
             data-desc="This website was designed as a place to showcase some of my work and share a bit about myself. Although currently a heavy
               work in progress, I plan to continue updating it as a personal project -- and as I learn more."
             data-tags="HTML,CSS,JavaScript"
-            data-github="#"
-            data-demo="#"
+            data-page="project-personal-website.html"
           >
             <div class="project-card-header">
               <i class="fas fa-folder-open project-icon"></i>
@@ -254,55 +253,13 @@
             <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
           </article>
 
-          <!-- Project Card 2 -->
-          <article class="project-card wip-card" role="button" tabindex="0"
-            data-title="Project Two"
-            data-desc="A brief description of this project. Highlight the key features and the technologies you used to build it. What did you learn? What would you do differently?"
-            data-tags="React,Node.js,API"
-            data-github="#"
-            data-demo="#"
-          >
-          <div class="wip-card-overlay">
-              <div class="wip-card-warning">
-                <div class="wip-card-triangle"></div>
-                <div class="wip-card-triangle-inner">
-                  <span>!</span>
-                </div>
-              </div>
-              <div class="wip-card-text-area">
-                <span class="wip-card-subtext">ACCESS DENIED</span>
-                <span class="wip-card-subtext" style="font-size: 0.6rem;">Work in Progress</span>
-              </div>
-            </div>
-            <div class="wip-card-scanlines"></div>
-            <div class="project-card-header">
-              <i class="fas fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="GitHub Repository" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
-              </div>
-            </div>
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-description">
-              A brief description of this project. Highlight the key features
-              and the technologies you used to build it.
-            </p>
-            <ul class="project-tags">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>API</li>
-            </ul>
-            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
-          </article>
-
-          <!-- Project Card 3 - Jetson (Featured) -->
+          <!-- Project Card 2 - Volunteer Finder -->
           <article class="project-card project-card--featured" role="button" tabindex="0"
-            data-title="BUILDING THE JETSON ORIN NANO"
+            data-title="VOLUNTEER FINDER"
             data-badge="Ongoing"
-            data-desc="An ongoing project to build an AI-powered system from the ground up using the NVIDIA Jetson Orin Nano. This series documents the entire build process — from hardware assembly and OS setup to deploying real-time AI models on the edge. So far: basic hardware assembled and dev kit running. Next: flashing OS, setting up dev environment, and exploring computer vision models.\n\nThis project is part of my journey into hardware, robotics, and edge AI."
-            data-tags="Jetson,AI,Robotics,Edge Computing,CV"
-            data-github="#"
-            data-demo="#"
+            data-desc="A personal tool I built to help me conveniently find volunteer opportunities I'm willing to travel to — mostly STEM-related ones. It pulls from a wide array of sources and sends me daily emails with new opportunities so I can easily track and log my high school volunteer hours. Pretty much complete!"
+            data-tags="HTML,CSS,JavaScript,API,STEM"
+            data-page="project-volunteer-finder.html"
           >
             <div class="project-card-header">
               <i class="fas fa-folder-open project-icon"></i>
@@ -312,59 +269,39 @@
               </div>
             </div>
             <span class="project-badge">Ongoing</span>
-            <h3 class="project-title">BUILDING THE JETSON ORIN NANO</h3>
+            <h3 class="project-title">VOLUNTEER FINDER</h3>
             <p class="project-description">
-              Building an AI-powered edge computer from scratch using the NVIDIA Jetson Orin Nano.
-              Documenting the full build process — hardware, software, and AI deployment.
+              Pulls from multiple sources and sends daily emails with STEM volunteer
+              opportunities nearby — helping me track my high school volunteer hours.
             </p>
             <ul class="project-tags">
-              <li>Jetson</li>
-              <li>AI</li>
-              <li>Robotics</li>
-              <li>Edge Computing</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>API</li>
+              <li>STEM</li>
             </ul>
             <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
           </article>
 
-          <!-- Project Card 4 -->
-          <article class="project-card wip-card" role="button" tabindex="0"
-            data-title="Project Three"
-            data-desc="A brief description of this project. What was your role and what impact did it have? Share what you're most proud of!"
-            data-tags="Python,SQL,Data"
-            data-github="#"
-            data-demo="#"
-          >
-          <div class="wip-card-overlay">
-              <div class="wip-card-warning">
-                <div class="wip-card-triangle"></div>
-                <div class="wip-card-triangle-inner">
-                  <span>!</span>
-                </div>
-              </div>
-              <div class="wip-card-text-area">
-                <span class="wip-card-subtext">ACCESS DENIED</span>
-                <span class="wip-card-subtext" style="font-size: 0.6rem;">Work in Progress</span>
-              </div>
-            </div>
-            <div class="wip-card-scanlines"></div>
+          <!-- Project Card 3 - Access Denied / Private -->
+          <article class="project-card project-card--locked" role="button" tabindex="0">
             <div class="project-card-header">
-              <i class="fas fa-folder-open project-icon"></i>
+              <i class="fas fa-lock project-icon"></i>
               <div class="project-links">
-                <a href="#" aria-label="GitHub Repository" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Live Demo" onclick="event.stopPropagation()"><i class="fas fa-external-link-alt"></i></a>
+                <span class="project-locked-badge">Private</span>
               </div>
             </div>
-            <h3 class="project-title">Project Three</h3>
+            <span class="project-badge project-badge--locked">Coming Soon</span>
+            <h3 class="project-title">PRIVATE PROJECT</h3>
             <p class="project-description">
-              A brief description of this project. What was your role and what
-              impact did it have?
+              Something cool is in the works. This project is currently private and will be revealed soon.
             </p>
-            <ul class="project-tags">
-              <li>Python</li>
-              <li>SQL</li>
-              <li>Data</li>
+            <ul class="project-tags project-tags--locked">
+              <li>Private</li>
+              <li>Locked</li>
             </ul>
-            <span class="project-card-readmore">Read more <i class="fas fa-arrow-right"></i></span>
+            <span class="project-card-readmore project-card-readmore--locked">Access Denied <i class="fas fa-lock"></i></span>
           </article>
 
           <!-- Add more project cards here -->
@@ -379,8 +316,9 @@
         <button class="modal-close" id="modal-close" aria-label="Close">
           <i class="fas fa-times"></i>
         </button>
-        <div class="modal-image-wrap">
-          <div class="modal-image-placeholder"><i class="fas fa-folder-open"></i></div>
+        <div class="modal-image-wrap" id="modal-image-wrap">
+          <img id="modal-image" src="" alt="" style="display: none; width: 100%; height: 100%; object-fit: contain; padding: 1rem; box-sizing: border-box;" />
+          <div class="modal-image-placeholder" id="modal-image-placeholder"><i class="fas fa-folder-open"></i></div>
         </div>
         <div class="modal-body">
           <span class="project-badge modal-badge" id="modal-badge" hidden></span>
@@ -422,6 +360,20 @@
         document.getElementById("modal-title").textContent = card.dataset.title || "";
         document.getElementById("modal-desc").textContent  = card.dataset.desc  || "";
 
+        // Handle modal image
+        const modalImage = document.getElementById("modal-image");
+        const modalImagePlaceholder = document.getElementById("modal-image-placeholder");
+        const imageData = card.dataset.image;
+        if (imageData) {
+          modalImage.src = imageData;
+          modalImage.alt = card.dataset.title || "";
+          modalImage.style.display = "block";
+          modalImagePlaceholder.style.display = "none";
+        } else {
+          modalImage.style.display = "none";
+          modalImagePlaceholder.style.display = "flex";
+        }
+
         const badge = document.getElementById("modal-badge");
         if (card.dataset.badge) {
           badge.textContent = card.dataset.badge;
@@ -448,10 +400,20 @@
       }
 
       document.querySelectorAll(".project-card[role='button']").forEach((card) => {
-        card.addEventListener("click", () => openModal(card));
-        card.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(card); }
-        });
+        // If card has data-page, navigate to project page instead of opening modal
+        if (card.dataset.page) {
+          card.addEventListener("click", () => {
+            window.location.href = card.dataset.page;
+          });
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.location.href = card.dataset.page; }
+          });
+        } else {
+          card.addEventListener("click", () => openModal(card));
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(card); }
+          });
+        }
       });
 
       modalClose.addEventListener("click", closeModal);
